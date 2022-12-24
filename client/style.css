@@ -8,13 +8,13 @@
 }
 
 body {
-  background: #343541;
+  background: #525252;
 }
 
 #app {
   width: 100vw;
   height: 100vh;
-  background: #343541;
+  background: #525252;
 
   display: flex;
   flex-direction: column;
@@ -49,9 +49,7 @@ body {
   padding: 15px;
 }
 
-.ai {
-  background: #40414F;
-}
+
 
 .chat {
   width: 100%;
@@ -107,6 +105,8 @@ body {
   scrollbar-width: none;
 }
 
+
+
 /* hides scrollbar */
 .message::-webkit-scrollbar {
   display: none;
@@ -117,7 +117,7 @@ form {
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
-  background: #40414F;
+  background: #525252;
 
   display: flex;
   flex-direction: row;
@@ -147,4 +147,23 @@ button {
 form img {
   width: 30px;
   height: 30px;
+}
+
+/* new changes */
+
+.chat-notification {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #414141;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.ai {
+  background-color: #313131;
+}
+
+
+.chat-notification-logo {
+  height: 3rem;
+  width: 3rem;
 }

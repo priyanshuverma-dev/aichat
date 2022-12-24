@@ -24,7 +24,6 @@ function typeText(element, text) {
         if(index < text.length) {
             element.innerHTML += text.charAt(index);
             index++;
-            chatContainer.scrollTop = chatContainer.scrollHeight;
         }else{
             clearInterval(interval);
         }
@@ -46,15 +45,19 @@ function generateUniqueId() {
 function chatStrip(isAl , value , uniqueId){
     return (
         `
-        <div class="wrapper ${isAl && 'ai'}">
-            <div class="chat">
+        <div class="wrapper  ${isAl && 'ai'}">
+            <div class="chat chat-notification" style="${isAl ? 'background-color: #313131; box-shadow:0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0);' : ''}">
+            <span class="inline-flex items-center justify-center p-2 
+             rounded-md">
                 <div class="profile">
                     <img 
                       src=${isAl ? bot : user} 
                       alt="${isAl ? 'bot' : 'user'}" 
+                      style='h-16 w-16 object-cover rounded-full'
                     />
-                </div>
-                <div class="message" id=${uniqueId}>${value}</div>
+                    </div>
+                    </span>
+                <div id=${uniqueId} class="text-white font-medium">${value}</div>
             </div>
         </div>
     `
