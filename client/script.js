@@ -102,14 +102,12 @@ const handleSubmit = async (e)=>{
         const data = await response.json();
         const parsedData = data.bot.trim();
 
-        console.log(parsedData);
-
         typeText(messageDiv, parsedData);
     }
     else {
         const err = await response.text();
         messageDiv.innerHTML = "Oops! Something went wrong.";
-        alert(err);
+        console.log(err);
 
     }
 };
