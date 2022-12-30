@@ -29,23 +29,37 @@ app.post('/' , async (req, res) => {
         
 
         if(req.body.prompt === ''){
-            prompt = "Hello AI";
-        }
+            const response = await openai.createCompletion({
+                model: "text-davinci-003",
+                prompt: `Hello AI`,
+                temperature: 0,
+                max_tokens: 3000,
+                top_p: 1,
+                frequency_penalty: 0.5,
+                presence_penalty: 0,
+            });
+    
+            res.status(200).send({
+                bot: response.data.choices[0].text,
+            });
+        }else{
 
-
-        const response = await openai.createCompletion({
-            model: "text-davinci-003",
-            prompt: `${prompt}`,
+            
+            
+            const response = await openai.createCompletion({
+                model: "text-davinci-003",
+                prompt: `${prompt}`,
             temperature: 0,
             max_tokens: 3000,
             top_p: 1,
             frequency_penalty: 0.5,
             presence_penalty: 0,
-        });
+            });
 
-        res.status(200).send({
-            bot: response.data.choices[0].text,
-        });
+            res.status(200).send({
+                bot: response.data.choices[0].text,
+            });
+        }
 
     }
     catch (error){
