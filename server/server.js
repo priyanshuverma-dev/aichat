@@ -27,9 +27,11 @@ app.post('/' , async (req, res) => {
     try{
         const prompt = req.body.prompt;
         
+
         if(req.body.prompt === ''){
             prompt = "Hello AI";
         }
+
 
 
 
