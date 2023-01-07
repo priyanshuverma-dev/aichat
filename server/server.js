@@ -30,7 +30,7 @@ app.post('/' , async (req, res) => {
 
         if(req.body.prompt === ''){
             const response = await openai.createCompletion({
-                model: "text-davinci-002",
+                model: "text-davinci-003",
                 prompt: `Human: Hello AI`,
                 temperature: 0.9,
                 max_tokens: 150,
@@ -48,7 +48,7 @@ app.post('/' , async (req, res) => {
             
             
             const response = await openai.createCompletion({
-                model: "text-davinci-002",
+                model: "text-davinci-003",
                 prompt: `Human: ${prompt}`,
                 temperature: 0.9,
                 max_tokens: 3000,
